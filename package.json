@@ -4,7 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "client": "expo start",
-    "server": "npx json-server --watch db.json port=3001",
+    "server": "npx json-server --watch db.json",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -13,6 +13,8 @@
   "dependencies": {
     "@expo/webpack-config": "^19.0.1",
     "@reduxjs/toolkit": "^2.0.1",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.6.7",
     "expo": "~49.0.15",
     "expo-status-bar": "~1.11.1",
     "json-server": "^1.0.0-alpha.22",
