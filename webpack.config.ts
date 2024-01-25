@@ -15,6 +15,7 @@ module.exports = async function (env: Environment, argv: Arguments) {
             '@/screens': './src/screens',
             '@/storage': './src/storage',
             '@/styles': './src/styles',
+            '@/hooks': './src/styles',
             '@/types': './src/types',
             '@/utils': './src/utils',
         };
