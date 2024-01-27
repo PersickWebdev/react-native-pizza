@@ -269,4 +269,20 @@ export const EndProducts = [
         isNew: false,
         image: "mock"
     },
-]
+];
+
+export const SliderData = [
+    {
+        id: 1,
+        url: 'https://images.unsplash.com/photo-1483181957632-8bda974cbc91?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+
+    },
+    {
+        id: 2,
+        url: 'https://images.unsplash.com/photo-1534349735944-2b3a6f7a268f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+    },
+    {
+        id: 3,
+        url: 'https://images.unsplash.com/photo-1513451732213-5775a1c40335?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80',
+    }
+];
