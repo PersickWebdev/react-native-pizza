@@ -1,35 +1,53 @@
-import { useState } from 'react';
-import { useTypedDispatch, useTypedSelector } from '@/hooks/useReactRedux';
-import { products } from '@/constants/data';
-import { setProducts } from '@/storage/slices/ProductsSlice';
-
-// import { Requests } from '@/api/requests';
-// import { Alert } from 'react-native';
+import { useTypedSelector } from '@/hooks/useReactRedux';
+import { Products, AdditionalProducts, EndProducts } from '@/constants/data';
+import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 
 export const useGetProductsRequest = () => {
-    const dispatch = useTypedDispatch();
-    const { products: storageProducts } = useTypedSelector((state) => state.Products);
-    const [ isProductsLoading, setIsProductsLoading ] = useState<boolean>(false);
+    const { searchValue, filterOption } = useTypedSelector((state) => state.Filter);
+    // const [ isProductsLoading, setIsProductsLoading ] = useState<boolean>(false);
+    // const [ isRefreshing, setIsRefreshing ] = useState<boolean>(false);
 
-    const getProductsRequest = () => {
-        setIsProductsLoading(true);
-        dispatch(setProducts(products));
-        setIsProductsLoading(false);
+    const searchProductByName = (products: Product[], searchValue: string, filterOption: string) => {
+        if (!products.length || !searchValue) return Products;
+
+        if (!filterOption) {
+            const searchedProducts = products.filter((product: Product) => product.title.toLowerCase().includes(searchValue.toLowerCase()));
+            return searchedProducts.length > 0 ? searchedProducts : [];
+        } else {
+            let filteredProducts = [];
+            products.forEach((product: Product) => {
+                Object.keys(product).forEach((key: string) => {
+                    if (key.toLowerCase() === filterOption.toLowerCase()) {
+                        if (product[key]) {
+                            filteredProducts.push(product);
+                        }
+                    }
+                })
+            });
+            const searchedProducts = filteredProducts.filter((product: Product) => product.title.toLowerCase().includes(searchValue.toLowerCase()));
+            return searchedProducts.length > 0 ? searchedProducts : [];
+        }
     };
 
-    // JSON SERVER NOT WORKING
-    // const getProductsRequest = async () => {
-    //     try {
-    //         setIsProductsLoading(true);
-    //         const response = await Requests.getProducts();
-    //         Alert.alert(response.data);
-    //     } catch(error) {
-    //         Alert.alert(error.data.message);
-    //     } finally {
-    //         setIsProductsLoading(false);
-    //         Alert.alert('finally');
-    //     }
-    // };
+    const searchedProducts = searchProductByName(Products, searchValue, filterOption);
 
-    return { getProductsRequest, isProductsLoading, storageProducts };
+    // const handleOnRefresh = useCallback(() => {
+    //     setIsRefreshing(true);
+    //     setTimeout(() => {
+    //         searchedProducts.unshift(...AdditionalProducts);
+    //         setIsRefreshing(false);
+    //     }, 2000);
+    // }, []);
+
+    // const handleOnEndReached = useCallback(() => {
+    //     searchedProducts.push(...EndProducts);
+    // }, []);
+
+    return {
+        searchedProducts,
+        // isProductsLoading,
+        // isRefreshing,
+        // handleOnRefresh,
+        // handleOnEndReached,
+    };
 };
