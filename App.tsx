@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ProductListScreen } from '@/screens/ProductListScreen/ProductListScreen';
 import { store } from '@/storage/store';
 import { Navigation } from "@/navigation";
+import {COLORS} from "@/constants/colors";
 
 export default function App() {
     return (

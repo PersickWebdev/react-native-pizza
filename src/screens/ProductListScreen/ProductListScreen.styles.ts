@@ -5,6 +5,9 @@ export const styles = StyleSheet.create({
     safeAreaView: {
         flex: 1,
         backgroundColor: COLORS.graphite,
+        // Todo: find out what element sets paddings and remove 'paddingTop' & 'paddingBottom'.
+        paddingTop: -59,
+        paddingBottom: -59,
     },
     keyboardAvoidingView: {
         flex: 1,
@@ -12,6 +15,7 @@ export const styles = StyleSheet.create({
     content: {
         flex: 1,
     },
+    // MODAL
     modalOverlay: {
         position: 'absolute',
         top: 0,
