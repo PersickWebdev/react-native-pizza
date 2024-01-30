@@ -1,10 +1,11 @@
 import React, { FC, ReactElement, useState } from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { setSearchValue } from '@/storage/slices/FilterSlice';
 import { useTypedDispatch } from '@/hooks/useReactRedux';
 import { CustomPressable } from '@/components/ui/CustomPressable/CustomPressable';
 import { Input } from '@/components/ui/Input';
-import { IMAGES } from '@/constants/images';
+import { COLORS } from '@/constants/colors';
 import { styles } from './ActionPanel.styles';
 
 type ActionPanelProps = {
@@ -42,12 +43,17 @@ const ActionPanel: FC<ActionPanelProps> = ({
       />
       <View style={styles['buttons']}>
         <CustomPressable action={handleOpenModal}>
-          <Image style={styles['panel__picture']} source={IMAGES.misc.open} />
+          <Ionicons
+              name='funnel-outline'
+              size={22}
+              color={COLORS.graphite}
+          />
         </CustomPressable>
         <CustomPressable action={handleOpenSearch} dismissKeyboard={!isSearchVisible}>
-          <Image
-            style={styles['panel__picture']}
-            source={IMAGES.misc['magnifying-glass']}
+          <Ionicons
+              name='search-outline'
+              size={22}
+              color={COLORS.graphite}
           />
         </CustomPressable>
       </View>
