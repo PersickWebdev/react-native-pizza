@@ -1,9 +1,12 @@
 import React, { FC, ReactElement } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableWithoutFeedback, Alert } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { IMAGES } from '@/constants/images';
+import { COLORS } from '@/constants/colors';
 import { styles } from './ProductCard.styles';
 
 type ProductCardProps = {
+    id: number,
     title: string;
     price: {
         new: string;
@@ -15,12 +18,17 @@ type ProductCardProps = {
 };
 
 const ProductCard: FC<ProductCardProps> = ({
+    id,
     title,
     price,
     isNew,
     description,
     image,
 }): ReactElement => {
+    const handleOnIconPress = () => {
+        Alert.alert(`Card ID: ${id}`);
+    };
+
     return (
         <View style={styles.container}>
             {/* IMAGE BOX */}
@@ -65,9 +73,15 @@ const ProductCard: FC<ProductCardProps> = ({
                             {description}
                         </Text>
                     </View>
-                    <View style={styles.actions}>
-                        <Image style={styles.actionsCart} source={IMAGES.misc.cart} />
-                    </View>
+                    <TouchableWithoutFeedback onPress={handleOnIconPress}>
+                        <View style={styles.actions}>
+                            <Ionicons
+                                name='add-circle'
+                                size={32}
+                                color={COLORS.greenMedium}
+                            />
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
                 <View />
             </View>

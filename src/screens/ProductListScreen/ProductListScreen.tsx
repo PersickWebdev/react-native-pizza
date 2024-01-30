@@ -13,6 +13,7 @@ import { ActionPanel } from '@/components/sections/ActionPanel';
 import { Filter } from '@/components/sections/ActionPanel/Filter';
 import { ProductsList } from '@/components/sections/ProductList';
 import { CustomPressable } from '@/components/ui/CustomPressable/CustomPressable';
+import { GlobalStyles } from '@/styles/global';
 import { styles } from './ProductListScreen.styles';
 
 const ProductListScreen = () => {
@@ -25,9 +26,9 @@ const ProductListScreen = () => {
     } = useGetProductsRequest();
 
     return (
-        <SafeAreaView style={styles.safeAreaView}>
+        <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
-                style={styles.keyboardAvoidingView}
+                style={GlobalStyles.keyboardAvoidingView}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             >
                 <ActionPanel setIsModalVisible={setIsModalVisible} />
