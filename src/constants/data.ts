@@ -2,7 +2,7 @@ export const Products = [
     {
         id: 1,
         title: "Greenie",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -14,7 +14,7 @@ export const Products = [
     {
         id: 2,
         title: "Hawaiian",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -26,7 +26,7 @@ export const Products = [
     {
         id: 3,
         title: "Madaga",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -38,7 +38,7 @@ export const Products = [
     {
         id: 4,
         title: "Margherita",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -50,7 +50,7 @@ export const Products = [
     {
         id: 5,
         title: "Meat Light",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -62,7 +62,7 @@ export const Products = [
     {
         id: 6,
         title: "Rukola",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "$12",
@@ -74,7 +74,7 @@ export const Products = [
     {
         id: 7,
         title: "Spicy",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "$10",
@@ -86,7 +86,7 @@ export const Products = [
     {
         id: 8,
         title: "Tomato Boom",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "$7",
@@ -98,7 +98,7 @@ export const Products = [
     {
         id: 9,
         title: "Tuna",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "$16",
@@ -113,7 +113,7 @@ export const AdditionalProducts = [
     {
         id: 10,
         title: "Pizza 10",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -125,7 +125,7 @@ export const AdditionalProducts = [
     {
         id: 11,
         title: "Pizza 11",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",
@@ -137,7 +137,7 @@ export const AdditionalProducts = [
     {
         id: 12,
         title: "Pizza 12",
-        description: "Description will be added soon, or not.",
+        description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
             new: "",

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "client": "expo start",
+    "start": "expo start",
+    "start-no-cache": "npx expo start -c",
     "server": "npx json-server --watch db.json",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -12,6 +13,12 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.1",
+    "@react-native-masked-view/masked-view": "0.2.9",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/drawer": "^6.6.6",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "@react-navigation/stack": "^6.3.20",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/axios": "^0.14.0",
     "axios": "^1.6.7",
@@ -20,8 +27,12 @@
     "json-server": "^1.0.0-alpha.22",
     "react": "18.2.0",
     "react-native": "0.73.2",
+    "react-native-gesture-handler": "~2.12.0",
     "react-native-safe-area-context": "4.6.3",
-    "react-redux": "^9.1.0"
+    "react-native-screens": "~3.22.0",
+    "react-redux": "^9.1.0",
+    "react-native-reanimated": "~3.3.0",
+    "@expo/vector-icons": "^13.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

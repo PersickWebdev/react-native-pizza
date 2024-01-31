@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, RefObject } from 'react';
 import {
     FlatList,
     ListRenderItem,
@@ -8,11 +8,11 @@ import {
 import { ProductCard } from './ProductCard/ProductCard';
 import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 import { Empty } from '@/components/global/Empty';
-// import { COLORS } from '@/constants/colors';
 import { styles } from './ProductList.styles';
 
 type ProductsListProps = {
     items: Product[];
+    ref: RefObject<FlatList>;
     // isRefreshing: boolean;
     // handleOnRefresh: () => void;
     // handleOnEndReached: () => void;
