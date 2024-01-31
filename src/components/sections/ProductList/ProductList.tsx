@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, RefObject } from 'react';
 import {
     FlatList,
     ListRenderItem,
@@ -13,6 +13,7 @@ import { styles } from './ProductList.styles';
 
 type ProductsListProps = {
     items: Product[];
+    ref: RefObject<FlatList>;
     // isRefreshing: boolean;
     // handleOnRefresh: () => void;
     // handleOnEndReached: () => void;

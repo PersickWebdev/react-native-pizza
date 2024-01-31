@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Platform, KeyboardAvoidingView, Text } from 'react-native';
 import { GlobalStyles } from '@/styles/global';
+import { COLORS } from '@/constants/colors';
 
 const FeedbackScreen = () => {
     return (
@@ -10,7 +11,7 @@ const FeedbackScreen = () => {
                 style={GlobalStyles.keyboardAvoidingView}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             >
-                <Text>Feedback Screen</Text>
+                <Text style={{ color: COLORS.cream }}>Feedback Screen</Text>
             </KeyboardAvoidingView>
         </SafeAreaView>
     );
