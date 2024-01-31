@@ -32,7 +32,7 @@ const ProductCard: FC<ProductCardProps> = ({
     const navigation = useNavigation();
 
     const addToCart = () => {
-        Alert.alert(`${title} added to cart`);
+        Alert.alert(`${title} added to cart. COMING SOON`);
     };
 
     const goToProductScreen = () => {

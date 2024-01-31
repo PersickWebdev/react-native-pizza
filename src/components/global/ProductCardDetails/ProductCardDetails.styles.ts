@@ -4,7 +4,7 @@ import { COLORS } from '@/constants/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 12,
+        padding: 12,
         alignItems: 'center',
     },
     title: {},
@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
         textDecorationLine: 'line-through',
     },
     image: {
+        marginTop: 24,
         padding: 8,
         position: 'relative',
     },
@@ -73,9 +74,11 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.greenMedium
     },
     addToCartButtonText: {
+        width: 120,
         fontSize: 20,
         fontWeight: '600',
         textTransform: 'uppercase',
+        textAlign: 'center',
         color: COLORS.graphite,
     },
 });

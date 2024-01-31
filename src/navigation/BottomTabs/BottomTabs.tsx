@@ -4,7 +4,13 @@ import { ProductListScreen } from '@/screens/ProductListScreen';
 import { FeedbackScreen } from '@/screens/FeedbackScreen';
 import { ContactsScreen } from '@/screens/ContactsScreen';
 
-const Tab = createBottomTabNavigator();
+export type TabType = {
+    Products: undefined;
+    Feedback: undefined;
+    Contacts: undefined;
+}
+
+const Tab = createBottomTabNavigator<TabType>();
 
 const TabGroup = () => {
     return (

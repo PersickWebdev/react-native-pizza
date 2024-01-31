@@ -17,19 +17,33 @@ const ProductCardDetails = ({ productData }) => {
                 </Text>
             </View>
             <View style={styles.price}>
-                {productData?.price.new && <Text style={styles.priceGeneral}>{productData?.price.new}</Text>}
-                <Text style={[styles.priceGeneral, productData?.price.new ? styles.priceLineThrough : {}]}>{productData?.price.old}</Text>
+                {productData?.price.new &&
+                    <Text style={styles.priceGeneral}>
+                        {productData?.price.new}
+                    </Text>
+                }
+                <Text
+                    style={[
+                        styles.priceGeneral,
+                        productData?.price.new ? styles.priceLineThrough : {}
+                    ]}
+                >
+                    {productData?.price.old}
+                </Text>
             </View>
             <View style={styles.image}>
-                {productData?.isNew && <View style={styles.newItem}><Text style={styles.newItemText}>New</Text></View>}
+                {productData?.isNew &&
+                    <View style={styles.newItem}>
+                        <Text style={styles.newItemText}>New</Text>
+                    </View>
+                }
                 <Image
                     style={styles.imagePicture}
                     source={IMAGES.pizzas[`${productData?.image}`]}
                 />
             </View>
             <View style={styles.description}>
-                <Text
-                    style={styles.descriptionText}>
+                <Text style={styles.descriptionText}>
                     {productData?.description}
                 </Text>
             </View>
@@ -41,7 +55,7 @@ const ProductCardDetails = ({ productData }) => {
             </View>
             <TouchableWithoutFeedback onPress={addToCart}>
                 <View style={styles.addToCartButton}>
-                    <Text style={styles.addToCartButtonText}>Want it!</Text>
+                    <Text style={styles.addToCartButtonText}>Get</Text>
                 </View>
             </TouchableWithoutFeedback>
         </View>

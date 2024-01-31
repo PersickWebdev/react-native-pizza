@@ -8,7 +8,6 @@ import {
 import { ProductCard } from './ProductCard/ProductCard';
 import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 import { Empty } from '@/components/global/Empty';
-// import { COLORS } from '@/constants/colors';
 import { styles } from './ProductList.styles';
 
 type ProductsListProps = {

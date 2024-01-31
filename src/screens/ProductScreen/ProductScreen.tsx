@@ -3,8 +3,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 import { ProductCardDetails } from '@/components/global/ProductCardDetails';
 import { GlobalStyles } from '@/styles/global';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { HomeStackType } from '@/navigation/NativeStack';
 
-const ProductScreen = ({ route }) => {
+type ProductCardDetailsProps = NativeStackScreenProps<HomeStackType, 'ProductScreen'>
+
+const ProductScreen = ({ route }: ProductCardDetailsProps) => {
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
