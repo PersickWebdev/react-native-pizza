@@ -14,6 +14,7 @@ type ProductCardProps = {
         old: string;
     };
     isNew: boolean;
+    ingredients: string;
     description: string;
     image: string;
 };
@@ -24,6 +25,7 @@ const ProductCard: FC<ProductCardProps> = ({
     price,
     isNew,
     description,
+    ingredients,
     image,
 }): ReactElement => {
 
@@ -41,6 +43,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 isNew,
                 description,
                 image,
+                ingredients,
             }
         });
     };
