@@ -53,7 +53,9 @@ export const CustomStyles = {
             width: '100%',
             backgroundColor: COLORS.greenMedium,
         },
-        pressable: {},
+        pressable: {
+            paddingVertical: 12,
+        },
         text: {
             textAlign: 'center',
             fontWeight: '600',

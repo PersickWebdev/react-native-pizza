@@ -9,6 +9,7 @@ import {
     Modal,
 } from 'react-native';
 import { CustomPressable } from '@/components/ui/CustomPressable';
+import { FeedbackForm } from '@/components/global/FeedbackForm';
 import { GlobalStyles } from '@/styles/global';
 import { styles, CustomStyles } from './FeedbackScreen.styles';
 
@@ -45,12 +46,13 @@ const FeedbackScreen = () => {
                     </TouchableWithoutFeedback>
 
                     <View style={styles.modalContent}>
-                        <CustomPressable
-                            customStyles={CustomStyles.modalSendButton}
-                            action={() => setIsModalVisible(!isModalVisible)}
-                        >
-                            <Text style={CustomStyles.modalSendButton.text}>Accept</Text>
-                        </CustomPressable>
+                        <FeedbackForm />
+                        {/*<CustomPressable*/}
+                        {/*    customStyles={CustomStyles.modalSendButton}*/}
+                        {/*    action={() => setIsModalVisible(!isModalVisible)}*/}
+                        {/*>*/}
+                        {/*    <Text style={CustomStyles.modalSendButton.text}>Accept</Text>*/}
+                        {/*</CustomPressable>*/}
                     </View>
                 </Modal>
 

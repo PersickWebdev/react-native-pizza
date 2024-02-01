@@ -1,19 +1,19 @@
 import { StyleSheet } from 'react-native';
-
 import { COLORS } from '@/constants/colors';
 
 export const styles = StyleSheet.create({
     container: {
-        display: 'none',
+        width: '100%',
     },
-    'is-visible': {
-        display: 'flex',
-        flex: 3,
-    },
-    inputElement: {
-        padding: 4,
+    input: {
+        paddingVertical: 6,
+        paddingHorizontal: 12,
         borderRadius: 4,
-        color: COLORS.graphite,
         backgroundColor: COLORS.cream,
     },
+    label: {
+        marginBottom: 4,
+        textTransform: 'uppercase',
+        color: COLORS.cream,
+    }
 });
