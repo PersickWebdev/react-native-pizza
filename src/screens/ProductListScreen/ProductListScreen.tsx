@@ -14,7 +14,7 @@ import { Filter } from '@/components/sections/ActionPanel/Filter';
 import { ProductsList } from '@/components/sections/ProductList';
 import { CustomPressable } from '@/components/ui/CustomPressable/CustomPressable';
 import { GlobalStyles } from '@/styles/global';
-import { styles } from './ProductListScreen.styles';
+import { styles, ModalButtonCustomStyles } from './ProductListScreen.styles';
 
 const ProductListScreen = () => {
     const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
@@ -55,7 +55,8 @@ const ProductListScreen = () => {
                     <View style={styles.modalContent}>
                         <Filter />
                         <CustomPressable
-                            customStyles={styles.modalButtonCustomStyle}
+                            // customStyles={styles.modalButtonCustomStyle}
+                            customStyles={ModalButtonCustomStyles}
                             action={() => setIsModalVisible(!isModalVisible)}
                         >
                             <Text style={styles.modalButtonText}>Accept</Text>

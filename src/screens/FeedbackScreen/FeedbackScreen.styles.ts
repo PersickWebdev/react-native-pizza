@@ -2,19 +2,6 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from '@/constants/colors';
 
 export const styles = StyleSheet.create({
-    // safeAreaView: {
-    //     flex: 1,
-    //     backgroundColor: COLORS.graphite,
-    //     // Todo: find out what element sets paddings and remove 'paddingTop' & 'paddingBottom'.
-    //     paddingTop: -59,
-    //     paddingBottom: -59,
-    // },
-    // keyboardAvoidingView: {
-    //     flex: 1,
-    // },
-    content: {
-        flex: 1,
-    },
     // MODAL
     modalOverlay: {
         position: 'absolute',
@@ -25,13 +12,16 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.5)',
     },
     modalContent: {
-        width: '100%',
-        backgroundColor: COLORS.graphiteLight,
-        borderRadius: 14,
+        width: '80%',
+        height: '80%',
+        marginVertical: '20%',
+        alignSelf: 'center',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         paddingTop: 64,
         paddingBottom: 24,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+        borderRadius: 14,
+        backgroundColor: COLORS.graphiteLight,
         shadowColor: COLORS.black,
         shadowOffset: {
             width: 0,
@@ -57,10 +47,31 @@ export const styles = StyleSheet.create({
     },
 });
 
-export const ModalButtonCustomStyles = {
-    container: {
-        padding: 8,
-        width: '100%',
+export const CustomStyles = {
+    leaveFeedbackButton: {
+        container: {
+            width: '100%',
+            backgroundColor: COLORS.greenMedium,
+        },
+        pressable: {},
+        text: {
+            textAlign: 'center',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+        },
     },
-    pressable: {},
-}
+    modalSendButton: {
+        container: {
+            width: '80%',
+            backgroundColor: COLORS.greenMedium
+        },
+        pressable: {
+            paddingVertical: 12,
+        },
+        text: {
+            textAlign: 'center',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+        },
+    }
+};

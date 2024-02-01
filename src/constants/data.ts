@@ -286,3 +286,48 @@ export const SliderData = [
         url: 'https://images.unsplash.com/photo-1513451732213-5775a1c40335?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80',
     }
 ];
+
+export const FeedbackData = [
+    {
+        id: 1,
+        name: 'Jill Sanders',
+        message: 'Tasty food, good timing, nice service!',
+        avatar: 'jill-sanders',
+    },
+    {
+        id: 2,
+        name: 'Alex McBright',
+        message: 'Very fast delivery, nice!',
+        avatar: 'alex-mcbright',
+    },
+    {
+        id: 3,
+        name: 'Kate Anderson',
+        message: 'Many thanks to your cook! He is a wizard!',
+        avatar: 'kate-anderson',
+    },
+    {
+        id: 4,
+        name: 'Molly Parker',
+        message: 'Meat Boom - just the best!',
+        avatar: 'molly-parker',
+    },
+    {
+        id: 5,
+        name: 'David Hall',
+        message: 'Tasty!',
+        avatar: 'david-hall',
+    },
+    {
+        id: 6,
+        name: 'Jane Fry',
+        message: 'Nice service',
+        avatar: 'jane-fry',
+    },
+    {
+        id: 7,
+        name: 'Bill Davidson',
+        message: 'It is too delicious',
+        avatar: 'bill-davidson',
+    },
+];
