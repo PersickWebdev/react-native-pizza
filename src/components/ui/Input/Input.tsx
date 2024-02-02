@@ -1,7 +1,6 @@
 import React, { FC, ReactElement, useState, useEffect } from 'react';
 import { View, TextInput } from 'react-native';
 import { COLORS } from '@/constants/colors';
-
 import { styles } from './Input.styles';
 
 type InputProps = {

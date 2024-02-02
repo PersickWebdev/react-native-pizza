@@ -1,11 +1,10 @@
 import { useTypedSelector } from '@/hooks/useReactRedux';
-import { Products, AdditionalProducts, EndProducts } from '@/constants/data';
+import { Products } from '@/constants/data';
 import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 
-export const useGetProductsRequest = () => {
+
+export const useSearch = () => {
     const { searchValue, filterOption } = useTypedSelector((state) => state.Filter);
-    // const [ isProductsLoading, setIsProductsLoading ] = useState<boolean>(false);
-    // const [ isRefreshing, setIsRefreshing ] = useState<boolean>(false);
 
     const searchProductByName = (products: Product[], searchValue: string, filterOption: string) => {
         if (!products.length || !searchValue) return Products;
@@ -31,23 +30,5 @@ export const useGetProductsRequest = () => {
 
     const searchedProducts = searchProductByName(Products, searchValue, filterOption);
 
-    // const handleOnRefresh = useCallback(() => {
-    //     setIsRefreshing(true);
-    //     setTimeout(() => {
-    //         searchedProducts.unshift(...AdditionalProducts);
-    //         setIsRefreshing(false);
-    //     }, 2000);
-    // }, []);
-
-    // const handleOnEndReached = useCallback(() => {
-    //     searchedProducts.push(...EndProducts);
-    // }, []);
-
-    return {
-        searchedProducts,
-        // isProductsLoading,
-        // isRefreshing,
-        // handleOnRefresh,
-        // handleOnEndReached,
-    };
+    return { searchedProducts };
 };

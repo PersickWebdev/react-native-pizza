@@ -6,9 +6,10 @@ import {
     Modal,
     TouchableWithoutFeedback,
     View,
-    Text
+    Text,
 } from 'react-native';
-import { useGetProductsRequest } from '@/hooks/useGetProductsRequest';
+import { useSearch } from '@/hooks/useSearch';
+import { useRefresh } from '@/hooks/useRefresh';
 import { ActionPanel } from '@/components/sections/ActionPanel';
 import { Filter } from '@/components/sections/ActionPanel/Filter';
 import { ProductsList } from '@/components/sections/ProductList';
@@ -18,12 +19,8 @@ import { styles, ModalButtonCustomStyles } from './ProductListScreen.styles';
 
 const ProductListScreen = () => {
     const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
-    const {
-        searchedProducts,
-        // isRefreshing,
-        // handleOnRefresh,
-        // handleOnEndReached,
-    } = useGetProductsRequest();
+    const { searchedProducts } = useSearch();
+    const { isRefreshing, handleOnRefresh, handleOnEndReached } = useRefresh();
 
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
@@ -35,9 +32,9 @@ const ProductListScreen = () => {
 
                 <ProductsList
                     items={searchedProducts}
-                    // isRefreshing={isRefreshing}
-                    // handleOnRefresh={handleOnRefresh}
-                    // handleOnEndReached={handleOnEndReached}
+                    isRefreshing={isRefreshing}
+                    handleOnRefresh={handleOnRefresh}
+                    handleOnEndReached={handleOnEndReached}
                 />
 
                 <Modal
@@ -55,7 +52,6 @@ const ProductListScreen = () => {
                     <View style={styles.modalContent}>
                         <Filter />
                         <CustomPressable
-                            // customStyles={styles.modalButtonCustomStyle}
                             customStyles={ModalButtonCustomStyles}
                             action={() => setIsModalVisible(!isModalVisible)}
                         >
