@@ -19,7 +19,7 @@ import { styles, ModalButtonCustomStyles } from './ProductListScreen.styles';
 
 const ProductListScreen = () => {
     const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
-    const { searchedProducts } = useSearch();
+    const { currentProducts } = useSearch();
     const { isRefreshing, handleOnRefresh, handleOnEndReached } = useRefresh();
 
     return (
@@ -31,7 +31,7 @@ const ProductListScreen = () => {
                 <ActionPanel setIsModalVisible={setIsModalVisible} />
 
                 <ProductsList
-                    items={searchedProducts}
+                    items={currentProducts}
                     isRefreshing={isRefreshing}
                     handleOnRefresh={handleOnRefresh}
                     handleOnEndReached={handleOnEndReached}

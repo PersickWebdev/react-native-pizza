@@ -24,7 +24,6 @@ const ProductsList: FC<ProductsListProps> = ({
     handleOnRefresh,
     handleOnEndReached,
 }): ReactElement => {
-
     const renderItem: ListRenderItem<Product[][number]> = ({ item }) => (
         <ProductCard {...item} />
     );
