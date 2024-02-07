@@ -1,8 +1,0 @@
-NAVIGATION
-DRAWER
-    => NATIVE_STACK
-        => BOTTOM_TABS
-            => ProductListScreen
-            => FeedbackScreen
-            => ContactsScreen
-    => SettingsScreen
