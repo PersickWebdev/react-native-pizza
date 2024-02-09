@@ -46,13 +46,10 @@ const FeedbackScreen = () => {
                     </TouchableWithoutFeedback>
 
                     <View style={styles.modalContent}>
-                        <FeedbackForm />
-                        {/*<CustomPressable*/}
-                        {/*    customStyles={CustomStyles.modalSendButton}*/}
-                        {/*    action={() => setIsModalVisible(!isModalVisible)}*/}
-                        {/*>*/}
-                        {/*    <Text style={CustomStyles.modalSendButton.text}>Accept</Text>*/}
-                        {/*</CustomPressable>*/}
+                        <FeedbackForm
+                            heading='Leave us your feedback'
+                            setIsModalVisible={setIsModalVisible}
+                        />
                     </View>
                 </Modal>
 

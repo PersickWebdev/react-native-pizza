@@ -1,21 +1,22 @@
 import React, { FC, ReactElement, useState } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { styles } from './Textarea.styles';
+import { styles } from './CustomInput.styles';
 
 type CustomStylesType = {
     container?: StyleSheet;
     input?: StyleSheet;
 };
 
-type TextareaProps = {
+type CustomInputProps = {
     name: string;
     value: string;
     label?: string;
+    placeholder?: string;
     setFormData: (state: any) => void;
     customStyles?: CustomStylesType;
 };
 
-const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customStyles }: TextareaProps): ReactElement => {
+const CustomInput: FC<CustomInputProps> = ({ name, value, label, setFormData, customStyles }: CustomInputProps): ReactElement => {
     const [ currentValue, setCurrentValue ] = useState<string>('');
 
     const handleOnTextChange = (text) => {
@@ -35,12 +36,12 @@ const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customSt
                 style={[styles.input, customStyles && { ...customStyles.input }]}
                 value={value ?? currentValue}
                 onChangeText={handleOnTextChange}
-                multiline={true}
+                multiline={false}
             />
         </View>
     );
 };
 
-Textarea.displayName = Textarea.name;
+CustomInput.displayName = CustomInput.name;
 
-export { Textarea };
+export { CustomInput };

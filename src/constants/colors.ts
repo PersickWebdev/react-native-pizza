@@ -6,4 +6,5 @@ export const COLORS = {
     cream: '#C0C7CF',
     greenMedium: '#3DC016FF',
     golden: '#c2a02a',
+    red: '#e53b3b',
 };

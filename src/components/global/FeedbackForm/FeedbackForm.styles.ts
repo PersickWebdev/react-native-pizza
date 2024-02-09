@@ -5,11 +5,12 @@ export const styles = StyleSheet.create({
     container: {
         padding: 6,
         width: '90%',
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: COLORS.cream,
+        height: '100%',
+        justifyContent: 'space-between',
     },
-    heading: {},
+    heading: {
+        marginBottom: 32,
+    },
     headingText: {
         fontSize: 18,
         fontWeight: '600',
@@ -17,10 +18,41 @@ export const styles = StyleSheet.create({
         textTransform: 'uppercase',
         color: COLORS.golden,
     },
+    sections: {
+        gap: 24,
+    },
+    section: {},
+    actions: {
+        flexDirection: 'row',
+        columnGap: 24,
+    },
 });
 
 export const CustomStyles = {
-    input: {
-
-    }
-}
+    buttonClose: {
+        container: {
+            flex: 1,
+            borderRadius: 4,
+        },
+        pressable: {
+            paddingVertical: 12,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: COLORS.red,
+            borderRadius: 4,
+        },
+    },
+    buttonSend: {
+        container: {
+            flex: 1,
+            borderRadius: 4,
+        },
+        pressable: {
+            paddingVertical: 12,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: COLORS.greenMedium,
+            borderRadius: 4,
+        },
+    },
+};
