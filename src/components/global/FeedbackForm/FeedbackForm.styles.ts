@@ -28,31 +28,33 @@ export const styles = StyleSheet.create({
     },
 });
 
+const ButtonStyles = {
+    generalContainer: {
+        flex: 1,
+        borderRadius: 4,
+    },
+    generalPressable: {
+        paddingVertical: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+    }
+}
+
 export const CustomStyles = {
     buttonClose: {
-        container: {
-            flex: 1,
-            borderRadius: 4,
-        },
+        container: ButtonStyles.generalContainer,
         pressable: {
-            paddingVertical: 12,
-            justifyContent: 'center',
-            alignItems: 'center',
+            ...ButtonStyles.generalPressable,
             backgroundColor: COLORS.red,
-            borderRadius: 4,
         },
+
     },
     buttonSend: {
-        container: {
-            flex: 1,
-            borderRadius: 4,
-        },
+        container: ButtonStyles.generalContainer,
         pressable: {
-            paddingVertical: 12,
-            justifyContent: 'center',
-            alignItems: 'center',
+            ...ButtonStyles.generalPressable,
             backgroundColor: COLORS.greenMedium,
-            borderRadius: 4,
         },
     },
 };

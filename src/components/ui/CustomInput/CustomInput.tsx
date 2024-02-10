@@ -14,9 +14,10 @@ type CustomInputProps = {
     placeholder?: string;
     setFormData: (state: any) => void;
     customStyles?: CustomStylesType;
+    returnKeyType?: string;
 };
 
-const CustomInput: FC<CustomInputProps> = ({ name, value, label, setFormData, customStyles }: CustomInputProps): ReactElement => {
+const CustomInput: FC<CustomInputProps> = ({ name, value, label, setFormData, customStyles, returnKeyType = 'done' }: CustomInputProps): ReactElement => {
     const [ currentValue, setCurrentValue ] = useState<string>('');
 
     const handleOnTextChange = (text) => {
@@ -37,6 +38,7 @@ const CustomInput: FC<CustomInputProps> = ({ name, value, label, setFormData, cu
                 value={value ?? currentValue}
                 onChangeText={handleOnTextChange}
                 multiline={false}
+                returnKeyType={returnKeyType}
             />
         </View>
     );

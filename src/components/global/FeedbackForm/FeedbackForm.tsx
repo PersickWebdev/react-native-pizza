@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { CustomInput } from '@/components/ui/CustomInput';
 import { Textarea } from '@/components/ui/Textarea';
 import { CustomPressable } from '@/components/ui/CustomPressable';
@@ -27,51 +27,56 @@ const FeedbackForm: FC<FeedbackFormProps> = ({ heading, setIsModalVisible }: Fee
     };
 
     return (
-        <View style={styles.container}>
-            <View>
-                {
-                    heading &&
-                    <View style={styles.heading}>
-                        <Text style={styles.headingText}>
-                            {heading}
-                        </Text>
-                    </View>
-                }
-                <View style={styles.sections}>
-                    <View style={styles.section}>
-                        <CustomInput
-                            label='Your name/nickname:'
-                            name='userName'
-                            value={formData.userName}
-                            setFormData={setFormData}
-                        />
-                    </View>
-                    <View style={styles.section}>
-                        <Textarea
-                            label='Your message:'
-                            name='userMessage'
-                            value={formData.userMessage}
-                            setFormData={setFormData}
-                        />
+        <TouchableWithoutFeedback onPress={() => setIsModalVisible && setIsModalVisible(false)}>
+            <View style={styles.container}>
+                <View>
+                    {
+                        heading &&
+                        <View style={styles.heading}>
+                            <Text style={styles.headingText}>
+                                {heading}
+                            </Text>
+                        </View>
+                    }
+                    <View style={styles.sections}>
+                        <View style={styles.section}>
+                            <CustomInput
+                                label='Your name/nickname:'
+                                name='userName'
+                                value={formData.userName}
+                                setFormData={setFormData}
+                                returnKeyType='done'
+                            />
+                        </View>
+                        <View style={styles.section}>
+                            <Textarea
+                                label='Your message:'
+                                name='userMessage'
+                                value={formData.userMessage}
+                                setFormData={setFormData}
+                                returnKeyType='done'
+                            />
+                        </View>
                     </View>
                 </View>
-            </View>
 
-            <View style={styles.actions}>
-                <CustomPressable
-                    customStyles={CustomStyles.buttonClose}
-                    action={handleClose}
-                >
-                    <Text>CLOSE</Text>
-                </CustomPressable>
-                <CustomPressable
-                    customStyles={CustomStyles.buttonSend}
-                    action={handleSend}
-                >
-                    <Text>SEND</Text>
-                </CustomPressable>
+                <View style={styles.actions}>
+                    <CustomPressable
+                        customStyles={CustomStyles.buttonClose}
+                        action={handleClose}
+                    >
+                        <Text>CLOSE</Text>
+                    </CustomPressable>
+                    <CustomPressable
+                        customStyles={CustomStyles.buttonSend}
+                        action={handleSend}
+                    >
+                        <Text>SEND</Text>
+                    </CustomPressable>
+                </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
+
     );
 };
 

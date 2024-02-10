@@ -13,9 +13,10 @@ type TextareaProps = {
     label?: string;
     setFormData: (state: any) => void;
     customStyles?: CustomStylesType;
+    returnKeyType?: string;
 };
 
-const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customStyles }: TextareaProps): ReactElement => {
+const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customStyles, returnKeyType = 'done' }: TextareaProps): ReactElement => {
     const [ currentValue, setCurrentValue ] = useState<string>('');
 
     const handleOnTextChange = (text) => {
@@ -35,7 +36,8 @@ const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customSt
                 style={[styles.input, customStyles && { ...customStyles.input }]}
                 value={value ?? currentValue}
                 onChangeText={handleOnTextChange}
-                multiline={true}
+                multiline={false}
+                returnKeyType={returnKeyType}
             />
         </View>
     );
