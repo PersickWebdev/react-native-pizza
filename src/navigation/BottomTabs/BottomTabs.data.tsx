@@ -27,8 +27,8 @@ export const TabOptions = ({ route }) => {
                     iconColor = focused ? COLORS.golden : COLORS.cream;
                     break;
                 }
-                case 'Contacts': {
-                    iconName = focused ? 'phone-portrait' : 'phone-portrait-outline';
+                case 'Cart': {
+                    iconName = focused ? 'cart' : 'cart-outline';
                     iconColor = focused ? COLORS.golden : COLORS.cream;
                     break;
                 }
