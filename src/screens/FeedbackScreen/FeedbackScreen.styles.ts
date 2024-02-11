@@ -45,6 +45,9 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
+    activityIndicator: {
+        marginTop: 32,
+    },
 });
 
 export const CustomStyles = {

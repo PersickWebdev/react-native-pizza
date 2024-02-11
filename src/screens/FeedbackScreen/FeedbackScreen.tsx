@@ -7,18 +7,23 @@ import {
     TouchableWithoutFeedback,
     View,
     Modal,
+    ActivityIndicator,
 } from 'react-native';
+import { useGetFeedbacks } from '@/api/hooks/useGetFeedbacks';
 import { CustomPressable } from '@/components/ui/CustomPressable';
 import { FeedbackForm } from '@/components/global/FeedbackForm';
 import { GlobalStyles } from '@/styles/global';
 import { styles, CustomStyles } from './FeedbackScreen.styles';
 
 const FeedbackScreen = () => {
+    const { feedbacks, isLoading: isFeedbacksLoading } = useGetFeedbacks();
     const [ isModalVisible, setIsModalVisible ] = useState(false);
 
     const handleOnPress = () => {
         setIsModalVisible(true);
     };
+
+    console.log('>>> FeedbackScreen -> feedbacks: ', feedbacks);
 
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
@@ -32,6 +37,8 @@ const FeedbackScreen = () => {
                 >
                     <Text style={CustomStyles.leaveFeedbackButton.text}>Leave feedback</Text>
                 </CustomPressable>
+
+                {isFeedbacksLoading && <ActivityIndicator style={styles.activityIndicator}/>}
 
                 <Modal
                     animationType="slide"
