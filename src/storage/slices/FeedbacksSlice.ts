@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '@/storage/store';
 
 type InitialState = {
     feedbacks: [];
@@ -17,4 +18,7 @@ const FeedbackSlice = createSlice({
 });
 
 export default FeedbackSlice.reducer;
+
+export const selectFeedbacks = (state: RootState) => state.Feedbacks.feedbacks;
+
 export const { setFeedbacks } = FeedbackSlice.actions;

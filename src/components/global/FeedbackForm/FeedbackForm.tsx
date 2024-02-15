@@ -17,6 +17,7 @@ const FeedbackForm: FC<FeedbackFormProps> = ({ heading, setIsModalVisible }: Fee
     });
 
     const handleSend = () => {
+        // Todo: implement setting feedback object to storage
         console.log('> > > FeedbackForm -> formData: ', formData);
         setIsModalVisible && setIsModalVisible(false);
     };

@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { AxiosError } from 'axios';
 import { Requests } from '@/api/requests';
 import { useTypedDispatch, useTypedSelector } from '@/hooks/useReactRedux';
-import { setFeedbacks } from '@/storage/slices/FeedbacksSlice';
+import { selectFeedbacks, setFeedbacks } from '@/storage/slices/FeedbacksSlice';
 import { ERRORS } from '@/constants/error';
 import { Error } from '@/api/types';
 
 export const useGetFeedbacks = () => {
     const dispatch = useTypedDispatch();
-    const { feedbacks } = useTypedSelector((state) => state.Feedbacks);
+    const feedbacks = useTypedSelector(selectFeedbacks);
     const [ isLoading, setIsLoading ] = useState<boolean>(false);
     const [ error, setError ] = useState<Error>({
         status: false,
@@ -16,6 +16,8 @@ export const useGetFeedbacks = () => {
     });
 
     const getFeedbacks = async () => {
+        // Todo: add AbortController to request
+
         try {
             setIsLoading(true);
             const Response = await Requests.getFeedbacksRequest();
