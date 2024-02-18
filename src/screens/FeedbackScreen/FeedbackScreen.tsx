@@ -23,8 +23,6 @@ const FeedbackScreen = () => {
         setIsModalVisible(true);
     };
 
-    console.log('>>> FeedbackScreen -> feedbacks: ', feedbacks);
-
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
@@ -44,11 +42,13 @@ const FeedbackScreen = () => {
                     animationType="slide"
                     transparent
                     visible={isModalVisible}
-                    onRequestClose={() => {
-                        setIsModalVisible(!isModalVisible);
-                    }}
+                    // onRequestClose={() => {
+                    //     setIsModalVisible(!isModalVisible);
+                    // }}
                 >
-                    <TouchableWithoutFeedback onPress={() => setIsModalVisible(!isModalVisible)}>
+                    <TouchableWithoutFeedback
+                        // onPress={() => setIsModalVisible(!isModalVisible)}
+                    >
                         <View style={styles.modalOverlay} />
                     </TouchableWithoutFeedback>
 

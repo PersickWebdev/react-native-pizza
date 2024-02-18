@@ -28,7 +28,9 @@ const FeedbackForm: FC<FeedbackFormProps> = ({ heading, setIsModalVisible }: Fee
     };
 
     return (
-        <TouchableWithoutFeedback onPress={() => setIsModalVisible && setIsModalVisible(false)}>
+        <TouchableWithoutFeedback
+            // onPress={() => setIsModalVisible && setIsModalVisible(false)}
+        >
             <View style={styles.container}>
                 <View>
                     {
