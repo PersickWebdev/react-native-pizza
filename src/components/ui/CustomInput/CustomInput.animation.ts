@@ -4,6 +4,7 @@ import { COLORS } from '@/constants/colors';
 
 export const useCustomInputAnimation = () => {
     const translateY = useSharedValue(0);
+    const translateX = useSharedValue(0);
     const color = useSharedValue(COLORS.graphite);
 
     // @ts-ignore
@@ -17,6 +18,14 @@ export const useCustomInputAnimation = () => {
                         duration: 300,
                         easing: Easing.inOut(Easing.ease)
                     })
+                },
+                {
+                    translateX: withTiming(
+                        translateX.value,
+                        {
+                            duration: 300,
+                            easing: Easing.inOut(Easing.ease)
+                        })
                 },
             ],
         }
@@ -43,6 +52,13 @@ export const useCustomInputAnimation = () => {
                     easing: Easing.ease
                 }
             );
+        translateX.value = withTiming(
+            translateX.value = translateX.value - 12,
+            {
+                duration: 0.2,
+                easing: Easing.ease
+            }
+        );
         color.value = withTiming(
             color.value = COLORS.cream,
             {
@@ -60,6 +76,13 @@ export const useCustomInputAnimation = () => {
                     easing: Easing.ease
                 }
             );
+        translateX.value = withTiming(
+            translateY.value = 0,
+            {
+                duration: 0.2,
+                easing: Easing.ease
+            }
+        );
         color.value = withTiming(
             color.value = COLORS.graphite,
             {
