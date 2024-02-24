@@ -13,7 +13,6 @@ type CustomInputProps = {
     name: string;
     value: string;
     label: string;
-    placeholder?: string;
     setFormData: (state: any) => void;
     customStyles?: CustomStylesType;
     returnKeyType?: string;

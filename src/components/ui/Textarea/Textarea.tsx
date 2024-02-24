@@ -1,5 +1,7 @@
 import React, { FC, ReactElement, useState } from 'react';
+import Animated from 'react-native-reanimated';
 import { View, Text, TextInput } from 'react-native';
+import { useCustomInputAnimation } from '@/components/ui/CustomInput/CustomInput.animation';
 import { styles } from './Textarea.styles';
 
 type CustomStylesType = {
@@ -10,13 +12,27 @@ type CustomStylesType = {
 type TextareaProps = {
     name: string;
     value: string;
-    label?: string;
+    label: string;
     setFormData: (state: any) => void;
     customStyles?: CustomStylesType;
     returnKeyType?: string;
 };
 
-const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customStyles, returnKeyType = 'done' }: TextareaProps): ReactElement => {
+const Textarea: FC<TextareaProps> = ({
+    name,
+    value,
+    label,
+    setFormData,
+    customStyles,
+    returnKeyType = 'done'
+}: TextareaProps): ReactElement => {
+    const {
+        animatedLabelContainerStyles,
+        animatedLabelTextStyles,
+        handleAnimationStart,
+        handleAnimationEnd
+    } = useCustomInputAnimation();
+
     const [ currentValue, setCurrentValue ] = useState<string>('');
 
     const handleOnTextChange = (text) => {
@@ -31,13 +47,20 @@ const Textarea: FC<TextareaProps> = ({ name, value, label, setFormData, customSt
 
     return (
         <View style={[styles.container, customStyles && { ...customStyles.container }]}>
-            {label && <Text style={styles.label}>{label}</Text>}
+            {/*{label && <Text style={styles.label}>{label}</Text>}*/}
+            <Animated.View style={[styles.label, animatedLabelContainerStyles]}>
+                <Animated.Text style={[styles.labelText, animatedLabelTextStyles]}>
+                    {label}
+                </Animated.Text>
+            </Animated.View>
             <TextInput
                 style={[styles.input, customStyles && { ...customStyles.input }]}
                 value={value ?? currentValue}
                 onChangeText={handleOnTextChange}
                 multiline={false}
                 returnKeyType={returnKeyType}
+                onFocus={!currentValue ? handleAnimationStart : null}
+                onBlur={!currentValue ? handleAnimationEnd : null}
             />
         </View>
     );
