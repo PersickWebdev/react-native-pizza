@@ -12,11 +12,14 @@ import {
 import { useGetFeedbacks } from '@/api/hooks/useGetFeedbacks';
 import { CustomPressable } from '@/components/ui/CustomPressable';
 import { FeedbackForm } from '@/components/global/FeedbackForm';
+import { FeedbackList } from '@/components/sections/FeedbackList';
+import { useRefresh } from '@/hooks/useRefresh';
 import { GlobalStyles } from '@/styles/global';
 import { styles, CustomStyles } from './FeedbackScreen.styles';
 
 const FeedbackScreen = () => {
     const { feedbacks, isLoading: isFeedbacksLoading } = useGetFeedbacks();
+    const { isRefreshing, handleOnRefresh, handleOnEndReached } = useRefresh();
     const [ isModalVisible, setIsModalVisible ] = useState(false);
 
     const handleOnPress = () => {
@@ -36,7 +39,17 @@ const FeedbackScreen = () => {
                     <Text style={CustomStyles.leaveFeedbackButton.text}>Leave feedback</Text>
                 </CustomPressable>
 
-                {isFeedbacksLoading && <ActivityIndicator style={styles.activityIndicator}/>}
+                {isFeedbacksLoading
+                    ?
+                        <ActivityIndicator style={styles.activityIndicator}/>
+                    :
+                        <FeedbackList
+                            items={feedbacks}
+                            isRefreshing={isRefreshing}
+                            handleOnRefresh={handleOnRefresh}
+                            handleOnEndReached={handleOnEndReached}
+                        />
+                }
 
                 <Modal
                     animationType="slide"

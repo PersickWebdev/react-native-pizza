@@ -1,8 +1,10 @@
 import React, { FC, ReactElement, useState } from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { useTypedDispatch } from '@/hooks/useReactRedux';
 import { CustomInput } from '@/components/ui/CustomInput';
 import { Textarea } from '@/components/ui/Textarea';
 import { CustomPressable } from '@/components/ui/CustomPressable';
+import { addFeedback } from '@/storage/slices/FeedbacksSlice';
 import { styles, CustomStyles } from './FeedbackForm.styles';
 
 type FeedbackFormProps = {
@@ -11,14 +13,15 @@ type FeedbackFormProps = {
 };
 
 const FeedbackForm: FC<FeedbackFormProps> = ({ heading, setIsModalVisible }: FeedbackFormProps): ReactElement => {
+    const dispatch = useTypedDispatch();
     const [ formData, setFormData ] = useState({
         userName: '',
         userMessage: '',
     });
 
     const handleSend = () => {
-        // Todo: implement setting feedback object to storage
         console.log('> > > FeedbackForm -> formData: ', formData);
+        dispatch(addFeedback(formData));
         setIsModalVisible && setIsModalVisible(false);
     };
 

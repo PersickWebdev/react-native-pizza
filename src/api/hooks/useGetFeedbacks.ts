@@ -16,13 +16,11 @@ export const useGetFeedbacks = () => {
     });
 
     const getFeedbacks = async () => {
-        // Todo: add AbortController to request
-
         try {
             setIsLoading(true);
             const Response = await Requests.getFeedbacksRequest();
             if (Response.data) {
-                dispatch(setFeedbacks(Response.data));
+                // dispatch(setFeedbacks(Response.data));
                 setError((state: Error) => {
                     return {
                         ...state,
