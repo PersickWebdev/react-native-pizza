@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, useState } from 'react';
 import Animated from 'react-native-reanimated';
-import { View, Text, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { useCustomInputAnimation } from '@/components/ui/CustomInput/CustomInput.animation';
 import { styles } from './Textarea.styles';
 
@@ -47,7 +47,6 @@ const Textarea: FC<TextareaProps> = ({
 
     return (
         <View style={[styles.container, customStyles && { ...customStyles.container }]}>
-            {/*{label && <Text style={styles.label}>{label}</Text>}*/}
             <Animated.View style={[styles.label, animatedLabelContainerStyles]}>
                 <Animated.Text style={[styles.labelText, animatedLabelTextStyles]}>
                     {label}

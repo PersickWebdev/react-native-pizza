@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { Image, Text, View, TouchableWithoutFeedback, Alert } from 'react-native';
+import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 import { IMAGES } from '@/constants/images';
 import { styles } from './ProductCardDetails.styles';
 
-const ProductCardDetails = ({ productData }) => {
+type ProductCardDetailsProps = {
+    productData: Product;
+};
+
+const ProductCardDetails: FC<ProductCardDetailsProps> = ({ productData }: ProductCardDetailsProps): ReactElement => {
 
     const addToCart = () => {
         Alert.alert(`${productData.title} added to cart. COMING SOON`);
@@ -61,5 +66,7 @@ const ProductCardDetails = ({ productData }) => {
         </View>
     );
 };
+
+ProductCardDetails.displayName = ProductCardDetails.name;
 
 export { ProductCardDetails };

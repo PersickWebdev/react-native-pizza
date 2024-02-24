@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Platform, KeyboardAvoidingView, Text } from 'react-native';
 import { GlobalStyles } from '@/styles/global';
 import { COLORS } from '@/constants/colors';
 
-const SettingsScreen = () => {
+type SettingsScreenProps = {};
+
+const SettingsScreen: FC<SettingsScreenProps> = ({}: SettingsScreenProps): ReactElement => {
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
@@ -16,5 +18,7 @@ const SettingsScreen = () => {
         </SafeAreaView>
     );
 };
+
+SettingsScreen.displayName = SettingsScreen.name;
 
 export { SettingsScreen };

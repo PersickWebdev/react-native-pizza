@@ -12,53 +12,51 @@ type ActionPanelProps = {
   setIsModalVisible?: (value: boolean) => void;
 };
 
-const ActionPanel: FC<ActionPanelProps> = ({
-  setIsModalVisible,
-}): ReactElement => {
-  const dispatch = useTypedDispatch();
-  const [ isSearchVisible, setIsSearchVisible ] = useState(false);
-  const [ searchData, setSearchData ] = useState('');
+const ActionPanel: FC<ActionPanelProps> = ({ setIsModalVisible }: ActionPanelProps): ReactElement => {
+    const dispatch = useTypedDispatch();
+    const [ isSearchVisible, setIsSearchVisible ] = useState(false);
+    const [ searchData, setSearchData ] = useState('');
 
-  const handleOpenModal = () => {
-    setIsModalVisible && setIsModalVisible(true);
-  };
+    const handleOpenModal = () => {
+        setIsModalVisible && setIsModalVisible(true);
+    };
 
-  const handleOpenSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
+    const handleOpenSearch = () => {
+        setIsSearchVisible(!isSearchVisible);
+    };
 
-  const handleInputSubmit = () => {
-    dispatch(setSearchValue(searchData));
-  };
+    const handleInputSubmit = () => {
+        dispatch(setSearchValue(searchData));
+    };
 
-  return (
-    <View style={styles['container']}>
-      <Input
-        placeholder="Search ..."
-        customStyle={isSearchVisible ? 'is-visible' : ''}
-        formData={searchData}
-        setFormData={setSearchData}
-        onSubmitHandler={handleInputSubmit}
-        clearValue={!isSearchVisible}
-      />
-      <View style={styles['buttons']}>
-        <CustomPressable action={handleOpenModal}>
-          <Ionicons
-              name='funnel-outline'
-              size={22}
-              color={COLORS.graphite}
-          />
-        </CustomPressable>
-        <CustomPressable action={handleOpenSearch} dismissKeyboard={!isSearchVisible}>
-          <Ionicons
-              name='search-outline'
-              size={22}
-              color={COLORS.graphite}
-          />
-        </CustomPressable>
-      </View>
-    </View>
-  );
+    return (
+        <View style={styles['container']}>
+            <Input
+                placeholder="Search ..."
+                customStyle={isSearchVisible ? 'is-visible' : ''}
+                formData={searchData}
+                setFormData={setSearchData}
+                onSubmitHandler={handleInputSubmit}
+                clearValue={!isSearchVisible}
+            />
+            <View style={styles['buttons']}>
+                <CustomPressable action={handleOpenModal}>
+                    <Ionicons
+                        name='funnel-outline'
+                        size={22}
+                        color={COLORS.graphite}
+                    />
+                </CustomPressable>
+                <CustomPressable action={handleOpenSearch} dismissKeyboard={!isSearchVisible}>
+                    <Ionicons
+                        name='search-outline'
+                        size={22}
+                        color={COLORS.graphite}
+                    />
+                </CustomPressable>
+            </View>
+        </View>
+    );
 };
 
 ActionPanel.displayName = ActionPanel.name;

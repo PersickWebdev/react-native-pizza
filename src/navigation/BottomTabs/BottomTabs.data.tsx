@@ -36,5 +36,5 @@ export const TabOptions = ({ route }) => {
 
             return <Ionicons name={iconName} size={size} color={iconColor}/>
         }
-    }
+    };
 };

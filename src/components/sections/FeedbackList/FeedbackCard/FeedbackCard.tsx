@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from './FeedbackCard.styles';
-import {COLORS} from "@/constants/colors";
+import { COLORS } from '@/constants/colors';
 
 type FeedbackCardProps = {
     userName: string;

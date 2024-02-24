@@ -14,13 +14,13 @@ type FeedbackFormProps = {
 
 const FeedbackForm: FC<FeedbackFormProps> = ({ heading, setIsModalVisible }: FeedbackFormProps): ReactElement => {
     const dispatch = useTypedDispatch();
+
     const [ formData, setFormData ] = useState({
         userName: '',
         userMessage: '',
     });
 
     const handleSend = () => {
-        console.log('> > > FeedbackForm -> formData: ', formData);
         dispatch(addFeedback(formData));
         setIsModalVisible && setIsModalVisible(false);
     };

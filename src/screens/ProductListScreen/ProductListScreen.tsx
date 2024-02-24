@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
     Platform,
@@ -17,7 +17,9 @@ import { CustomPressable } from '@/components/ui/CustomPressable/CustomPressable
 import { GlobalStyles } from '@/styles/global';
 import { styles, ModalButtonCustomStyles } from './ProductListScreen.styles';
 
-const ProductListScreen = () => {
+type ProductListScreenProps = {};
+
+const ProductListScreen: FC<ProductListScreenProps> = ({}: ProductListScreenProps): ReactElement => {
     const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
     const { currentProducts } = useSearch();
     const { isRefreshing, handleOnRefresh, handleOnEndReached } = useRefresh();
@@ -63,5 +65,7 @@ const ProductListScreen = () => {
         </SafeAreaView>
     );
 };
+
+ProductListScreen.displayName = ProductListScreen.name;
 
 export { ProductListScreen };

@@ -19,7 +19,7 @@ const Input: FC<InputProps> = ({
   customStyle,
   onSubmitHandler,
   clearValue,
-}): ReactElement => {
+}: InputProps): ReactElement => {
   const [currentValue, setCurrentValue] = useState<string>('');
 
   const handleOnChangeText = (text: string) => {

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Platform, KeyboardAvoidingView, View, Text, Linking } from 'react-native';
 import { Data } from '@/screens/ContactsScreen/ContactsScreen.data';
 import { GlobalStyles } from '@/styles/global';
 import { styles } from './CotnactsScreen.styles';
 
-const ContactsScreen = () => {
+type ContactsScreenProps = {};
+
+const ContactsScreen: FC<ContactsScreenProps> = ({}: ContactsScreenProps): ReactElement => {
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
@@ -81,5 +83,7 @@ const ContactsScreen = () => {
         </SafeAreaView>
     );
 };
+
+ContactsScreen.displayName = ContactsScreen.name;
 
 export { ContactsScreen };

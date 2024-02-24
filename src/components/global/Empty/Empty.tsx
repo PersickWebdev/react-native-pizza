@@ -16,5 +16,7 @@ const Empty: FC<EmptyProps> = ({ message= 'No results ...' }: EmptyProps): React
     );
 };
 
+Empty.displayName = Empty.name;
+
 export { Empty };
 

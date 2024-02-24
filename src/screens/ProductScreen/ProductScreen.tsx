@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAvoidingView, Platform } from 'react-native';
-import { ProductCardDetails } from '@/components/global/ProductCardDetails';
-import { GlobalStyles } from '@/styles/global';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { HomeStackType } from '@/navigation/NativeStack';
+import { ProductCardDetails } from '@/components/global/ProductCardDetails';
+import { GlobalStyles } from '@/styles/global';
 
 type ProductCardDetailsProps = NativeStackScreenProps<HomeStackType, 'ProductScreen'>
 
-const ProductScreen = ({ route }: ProductCardDetailsProps) => {
+const ProductScreen: FC<ProductCardDetailsProps> = ({ route }: ProductCardDetailsProps): ReactElement => {
     return (
         <SafeAreaView style={GlobalStyles.safeAreaView}>
             <KeyboardAvoidingView
@@ -20,5 +20,7 @@ const ProductScreen = ({ route }: ProductCardDetailsProps) => {
         </SafeAreaView>
     );
 };
+
+ProductScreen.displayName = ProductScreen.name;
 
 export { ProductScreen };

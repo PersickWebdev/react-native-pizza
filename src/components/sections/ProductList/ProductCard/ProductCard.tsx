@@ -27,7 +27,7 @@ const ProductCard: FC<ProductCardProps> = ({
     description,
     ingredients,
     image,
-}): ReactElement => {
+}: ProductCardProps): ReactElement => {
 
     const navigation = useNavigation();
 

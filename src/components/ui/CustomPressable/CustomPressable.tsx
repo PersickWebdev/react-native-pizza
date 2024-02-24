@@ -44,4 +44,6 @@ return (
   );
 };
 
+CustomPressable.displayName = CustomPressable.name;
+
 export { CustomPressable };

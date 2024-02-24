@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
     Platform,
@@ -17,7 +17,9 @@ import { useRefresh } from '@/hooks/useRefresh';
 import { GlobalStyles } from '@/styles/global';
 import { styles, CustomStyles } from './FeedbackScreen.styles';
 
-const FeedbackScreen = () => {
+type FeedbackScreenProps = {};
+
+const FeedbackScreen: FC<FeedbackScreenProps> = ({}: FeedbackScreenProps): ReactElement => {
     const { feedbacks, isLoading: isFeedbacksLoading } = useGetFeedbacks();
     const { isRefreshing, handleOnRefresh, handleOnEndReached } = useRefresh();
     const [ isModalVisible, setIsModalVisible ] = useState(false);
@@ -77,5 +79,7 @@ const FeedbackScreen = () => {
         </SafeAreaView>
     );
 };
+
+FeedbackScreen.displayName = FeedbackScreen.name;
 
 export { FeedbackScreen };

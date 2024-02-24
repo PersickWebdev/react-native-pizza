@@ -44,4 +44,6 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({
     );
 };
 
+CustomCheckbox.displayName = CustomCheckbox.name;
+
 export { CustomCheckbox };
