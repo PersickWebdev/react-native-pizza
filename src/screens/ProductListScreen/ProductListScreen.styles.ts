@@ -2,16 +2,6 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from '@/constants/colors';
 
 export const styles = StyleSheet.create({
-    // safeAreaView: {
-    //     flex: 1,
-    //     backgroundColor: COLORS.graphite,
-    //     // Todo: find out what element sets paddings and remove 'paddingTop' & 'paddingBottom'.
-    //     paddingTop: -59,
-    //     paddingBottom: -59,
-    // },
-    // keyboardAvoidingView: {
-    //     flex: 1,
-    // },
     content: {
         flex: 1,
     },
@@ -25,13 +15,16 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.5)',
     },
     modalContent: {
-        width: '100%',
+        width: '80%',
+        height: '45%',
+        marginVertical: '20%',
         backgroundColor: COLORS.graphiteLight,
         borderRadius: 14,
         paddingTop: 64,
         paddingBottom: 24,
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        alignSelf: 'center',
         shadowColor: COLORS.black,
         shadowOffset: {
             width: 0,
@@ -60,7 +53,7 @@ export const styles = StyleSheet.create({
 export const ModalButtonCustomStyles = {
     container: {
         padding: 8,
-        width: '100%',
+        width: '80%',
     },
     pressable: {},
 }

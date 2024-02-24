@@ -42,9 +42,9 @@ const FeedbackScreen = () => {
                     animationType="slide"
                     transparent
                     visible={isModalVisible}
-                    // onRequestClose={() => {
-                    //     setIsModalVisible(!isModalVisible);
-                    // }}
+                    onRequestClose={() => {
+                        setIsModalVisible(!isModalVisible);
+                    }}
                 >
                     <TouchableWithoutFeedback
                         // onPress={() => setIsModalVisible(!isModalVisible)}
