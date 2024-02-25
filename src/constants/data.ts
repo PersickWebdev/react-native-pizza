@@ -5,8 +5,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$8"
+            new: null,
+            old: 8
         },
         isNew: false,
         image: "greenie"
@@ -17,8 +17,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$10"
+            new: null,
+            old: 10
         },
         isNew: false,
         image: "hawaiian"
@@ -29,8 +29,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$12"
+            new: null,
+            old: 12
         },
         isNew: false,
         image: "madaga"
@@ -41,8 +41,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$14"
+            new: null,
+            old: 14
         },
         isNew: false,
         image: "margherita"
@@ -53,8 +53,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$14"
+            new: null,
+            old: 14
         },
         isNew: false,
         image: "meat-light"
@@ -65,8 +65,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "$12",
-            old: "$16"
+            new: 12,
+            old: 16
         },
         isNew: true,
         image: "rukola"
@@ -77,8 +77,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "$10",
-            old: "$12"
+            new: 10,
+            old: 12
         },
         isNew: true,
         image: "spicy"
@@ -89,8 +89,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "$7",
-            old: "$10"
+            new: 7,
+            old: 10
         },
         isNew: true,
         image: "tomato-boom"
@@ -101,8 +101,8 @@ export const Products = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "$16",
-            old: "$20"
+            new: 16,
+            old: 20
         },
         isNew: true,
         image: "tuna"
@@ -116,8 +116,8 @@ export const AdditionalProducts = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$12"
+            new: null,
+            old: 12
         },
         isNew: false,
         image: "mock"
@@ -128,8 +128,8 @@ export const AdditionalProducts = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$15"
+            new: null,
+            old: 15
         },
         isNew: false,
         image: "mock"
@@ -140,8 +140,8 @@ export const AdditionalProducts = [
         description: "Description will be added soon, or not :)",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$16"
+            new: null,
+            old: 16
         },
         isNew: false,
         image: "mock"
@@ -155,8 +155,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$8"
+            new: null,
+            old: 8
         },
         isNew: false,
         image: "mock"
@@ -167,8 +167,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$9"
+            new: null,
+            old: 9
         },
         isNew: false,
         image: "mock"
@@ -179,8 +179,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$10"
+            new: null,
+            old: 10
         },
         isNew: false,
         image: "mock"
@@ -191,8 +191,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$12"
+            new: null,
+            old: 12
         },
         isNew: false,
         image: "mock"
@@ -203,8 +203,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$9"
+            new: null,
+            old: 9
         },
         isNew: false,
         image: "mock"
@@ -215,8 +215,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$11"
+            new: null,
+            old: 11
         },
         isNew: false,
         image: "mock"
@@ -227,8 +227,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$7"
+            new: null,
+            old: 7
         },
         isNew: false,
         image: "mock"
@@ -239,8 +239,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$14"
+            new: null,
+            old: 14
         },
         isNew: false,
         image: "mock"
@@ -251,8 +251,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$15"
+            new: null,
+            old: 15
         },
         isNew: false,
         image: "mock"
@@ -263,8 +263,8 @@ export const EndProducts = [
         description: "Description will be added soon, or not.",
         ingredients: "Wheat dough, olive oil, tomatoes, fresh basil, mozzarella, salt.",
         price: {
-            new: "",
-            old: "$16"
+            new: null,
+            old: 16
         },
         isNew: false,
         image: "mock"

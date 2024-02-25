@@ -1,5 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Image, Text, View, TouchableWithoutFeedback, Alert } from 'react-native';
+import { useTypedDispatch } from '@/hooks/useReactRedux';
+import { addCartItem } from '@/storage/slices/CartSlice';
 import { Product } from '@/components/sections/ProductList/ProductCard/ProductCard.types';
 import { IMAGES } from '@/constants/images';
 import { styles } from './ProductCardDetails.styles';
@@ -9,9 +11,18 @@ type ProductCardDetailsProps = {
 };
 
 const ProductCardDetails: FC<ProductCardDetailsProps> = ({ productData }: ProductCardDetailsProps): ReactElement => {
+    const dispatch = useTypedDispatch();
 
     const addToCart = () => {
-        Alert.alert(`${productData.title} added to cart. COMING SOON`);
+        const CartItem = {
+            id: productData.id,
+            title: productData.title,
+            // price: productData.price.new ? productData.price.new : productData.price.old,
+            price: productData.price.new ?? productData.price.old,
+            image: productData.image,
+        };
+        dispatch(addCartItem(CartItem));
+        Alert.alert(`${productData.title} for $${productData.price.new ?? productData.price.old} was added to cart`);
     };
 
     return (
@@ -24,7 +35,7 @@ const ProductCardDetails: FC<ProductCardDetailsProps> = ({ productData }: Produc
             <View style={styles.price}>
                 {productData?.price.new &&
                     <Text style={styles.priceGeneral}>
-                        {productData?.price.new}
+                        {`$${productData?.price.new}`}
                     </Text>
                 }
                 <Text
@@ -33,7 +44,7 @@ const ProductCardDetails: FC<ProductCardDetailsProps> = ({ productData }: Produc
                         productData?.price.new ? styles.priceLineThrough : {}
                     ]}
                 >
-                    {productData?.price.old}
+                    {`$${productData?.price.old}`}
                 </Text>
             </View>
             <View style={styles.image}>

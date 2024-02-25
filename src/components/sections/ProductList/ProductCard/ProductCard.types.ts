@@ -4,7 +4,7 @@ export type Product = {
     description: string;
     ingredients: string;
     price: {
-        new: number;
+        new: number | null;
         old: number;
     },
     isNew: boolean;

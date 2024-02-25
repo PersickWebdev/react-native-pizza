@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Platform, KeyboardAvoidingView, Text } from 'react-native';
+import { Platform, KeyboardAvoidingView } from 'react-native';
+import { Cart } from '@/components/global/Cart/Cart';
 import { GlobalStyles } from '@/styles/global';
-import { COLORS } from '@/constants/colors';
 
 type CartScreenProps =  {};
 
@@ -13,7 +13,7 @@ const CartScreen: FC<CartScreenProps> = ({}: CartScreenProps): ReactElement => {
                 style={GlobalStyles.keyboardAvoidingView}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             >
-                <Text style={{ color: COLORS.cream }}>Cart Screen</Text>
+                <Cart />
             </KeyboardAvoidingView>
         </SafeAreaView>
     );

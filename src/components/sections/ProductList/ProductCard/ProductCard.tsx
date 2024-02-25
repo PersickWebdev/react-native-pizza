@@ -1,6 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 import { View, Text, Image, TouchableWithoutFeedback, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTypedDispatch } from '@/hooks/useReactRedux';
+import { addCartItem } from '@/storage/slices/CartSlice';
 import { Ionicons } from '@expo/vector-icons';
 import { IMAGES } from '@/constants/images';
 import { COLORS } from '@/constants/colors';
@@ -10,8 +12,8 @@ type ProductCardProps = {
     id: number,
     title: string;
     price: {
-        new: string;
-        old: string;
+        new: number | null;
+        old: number;
     };
     isNew: boolean;
     ingredients: string;
@@ -28,11 +30,18 @@ const ProductCard: FC<ProductCardProps> = ({
     ingredients,
     image,
 }: ProductCardProps): ReactElement => {
-
     const navigation = useNavigation();
+    const dispatch = useTypedDispatch();
 
     const addToCart = () => {
-        Alert.alert(`${title} added to cart. COMING SOON`);
+        const CartItem = {
+            id,
+            title,
+            price: price.new ? price.new : price.old,
+            image
+        };
+        dispatch(addCartItem(CartItem));
+        Alert.alert(`${title} for $${price.new ?? price.old} was added to cart`);
     };
 
     const goToProductScreen = () => {
@@ -72,7 +81,7 @@ const ProductCard: FC<ProductCardProps> = ({
                         </View>
                         <View style={styles.price}>
                             {price?.new && (
-                                <Text style={styles.priceGeneral}>{price?.new}</Text>
+                                <Text style={styles.priceGeneral}>{`$${price?.new}`}</Text>
                             )}
                             <Text
                                 style={[
@@ -81,7 +90,7 @@ const ProductCard: FC<ProductCardProps> = ({
                                         ? styles.priceOldLineThrough
                                         : styles.priceOld,
                                 ]}>
-                                {price?.old}
+                                {`$${price?.old}`}
                             </Text>
                         </View>
                     </View>
