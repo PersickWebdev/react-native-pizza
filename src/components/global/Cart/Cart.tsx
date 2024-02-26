@@ -11,11 +11,7 @@ import { styles, CustomStyles } from './Cart.styles';
 type CartProps =  {};
 
 const Cart: FC<CartProps> = ({}: CartProps): ReactElement => {
-    const { cartItems, totalItemsCount, totalItemsPrice } = useTypedSelector((state) => state.Cart);
-
-    console.log('>>> Cart -> cartItems: ', cartItems);
-    console.log('>>> Cart -> totalItemsCount: ', totalItemsCount);
-    console.log('>>> Cart -> totalItemsPrice: ', totalItemsPrice);
+    const { cartItems, totalItemsPrice } = useTypedSelector((state) => state.Cart);
 
     const normalizedCartItems = normalizeCartItemsData(cartItems);
 
